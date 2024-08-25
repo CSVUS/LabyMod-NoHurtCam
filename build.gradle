@@ -30,7 +30,7 @@ archivesBaseName = 'nohurtcam'
 
 sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
 
-def mcpVersion = [channel: 'snapshot', version: '20201028-1.16.3']
+def mcpVersion = [channel: 'snapshot', version: '20201028-1.8.9']
 
 mixin {
     defaultObfuscationEnv searge
@@ -81,7 +81,7 @@ repositories {
 dependencies {
     annotationProcessor("org.spongepowered:mixin:0.8.2:processor")
 
-    minecraft 'com.github.ImpactDevelopment:Vanilla:1.16.5'
+    minecraft 'com.github.ImpactDevelopment:Vanilla:1.8.9'
     compile(files('libs/lm_api_mc1.16.5.jar'))
 
     compile("org.ow2.asm:asm-analysis:6.2") { transitive = false }
@@ -105,7 +105,7 @@ task downloadAPI(type: Download) {
         libraryDirectory.mkdirs()
     }
 
-    src "https://dl.labymod.net/latest/api/files/lm_api_mc1.16.5.jar"
+    src "https://dl.labymod.net/latest/api/files/lm_api_mc1.8.9.jar"
     dest 'libs/'
 }
 
